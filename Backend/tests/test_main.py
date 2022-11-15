@@ -1,28 +1,12 @@
 import pytest
+import json
+from httpx import AsyncClient
+
+from Backend.api.main import app
 
 
-def func(x):
-    return x + 1
-
-
-def f():
-    raise SystemExit(1)
-
-
-def test_answer():
-    assert func(3) == 4
-
-
-def test_mytest():
-    with pytest.raises(SystemExit):
-        f()
-
-
-class TestClass:
-    def test_one(self):
-        x = "this"
-        assert "h" in x
-
-    def test_two(self):
-        x = "hello"
-        assert hasattr(x, "check")
+@pytest.mark.anyio
+async def test_root():
+    async with AsyncClient(app=app, base_url="http://test") as ac:
+        response = await ac.get("/")
+    assert response.status_code == 200
