@@ -2,7 +2,7 @@ import pytest
 import json
 from httpx import AsyncClient
 
-from Backend.api.main import app
+from Backend.main import app
 
 
 @pytest.mark.anyio
