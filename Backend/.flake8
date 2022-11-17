@@ -8,6 +8,8 @@ exclude =
     venv,
     .env,
     .venv
+    *migrations*,
+    backend/db/base.py
 
 ignore =
     E121,
@@ -27,6 +29,7 @@ ignore =
     E305,
     E402,
     E501,
+    E712,
     E741,
     W291,
     W292,
