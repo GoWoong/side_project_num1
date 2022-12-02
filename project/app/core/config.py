@@ -24,7 +24,7 @@ class Settings(BaseSettings):
         raise ValueError(v)
 
     PROJECT_NAME: str = "GoWoong Project"
-    SENTRY_DSN: Optional[HttpUrl] = None
+    SENTRY_DSN: Optional[AnyHttpUrl] = None
 
     @validator("SENTRY_DSN", pre=True)
     def sentry_dsn_can_be_blank(cls, v: str) -> Optional[str]:
