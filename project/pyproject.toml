@@ -7,6 +7,14 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.9"
+fastapi = "^0.88.0"
+uvicorn = "^0.20.0"
+SQLAlchemy = "^1.4.44"
+pytest = "^7.2.0"
+alembic = "^1.8.1"
+mypy = "^0.991"
+Faker = "^15.3.4"
+factory-boy = "^3.2.1"
 
 
 [build-system]
